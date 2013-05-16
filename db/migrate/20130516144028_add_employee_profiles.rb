@@ -1,6 +1,6 @@
 class AddEmployeeProfiles < ActiveRecord::Migration
   def change
-    create_table :employee_profiles do |t|
+    create_table :profiles do |t|
       t.timestamps
       t.integer :height
       t.integer :age

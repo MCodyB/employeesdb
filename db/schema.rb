@@ -13,18 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130516144028) do
 
-  create_table "employee_profiles", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "height"
-    t.integer  "age"
-    t.string   "fav_food"
-    t.string   "fav_day"
-    t.date     "birthday"
-    t.integer  "salary"
-    t.string   "photo_url"
-  end
-
   create_table "employees", :force => true do |t|
     t.string   "name"
     t.integer  "supervisor_id"
@@ -40,10 +28,22 @@ ActiveRecord::Schema.define(:version => 20130516144028) do
     t.integer  "team_id"
   end
 
+  create_table "profiles", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "height"
+    t.integer  "age"
+    t.string   "fav_food"
+    t.string   "fav_day"
+    t.date     "birthday"
+    t.integer  "salary"
+    t.string   "photo_url"
+  end
+
   create_table "teams", :force => true do |t|
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "supervisor_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "team_leader_id"
     t.string   "name"
   end
 
