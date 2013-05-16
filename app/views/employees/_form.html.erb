@@ -1,12 +1,20 @@
 <%= form_for @employee do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<%= f.label :supervisor_id %>
-<%= f.collection_select :supervisor_id, Employee.bosses, :id, :name %>
+  <%= f.label :supervisor_id %>
+  <%= f.collection_select :supervisor_id, Employee.bosses, :id, :name, {:prompt =>true, :include_blank => true} %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+  <%= f.fields_for :profile do |p| %><br>
+    <%= p.text_field :height, placeholder: "Enter height"%>
+    <%= p.text_field :fav_food, placeholder: "Enter Favorite Food" %>
+    <%= p.text_field :fav_day, placeholder: "Enter Favorite Weekday" %>
+    <%= p.label :birthday %>
+    <%= p.date_select :birthday%>
+    <%= p.text_field :salary, placeholder: "Enter Salary" %>
+    <%= p.text_field :photo_url, placeholder: "Enter your avatar url" %>
+  <% end %>
 
+  <%= f.submit %>
 <% end %>
