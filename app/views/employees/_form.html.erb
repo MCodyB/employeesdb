@@ -1,4 +1,4 @@
-<%= form_for @employee, :html => { :multipart => true } do |f| %>
+<%= form_for @employee, :url => employees_path, :html => { :multipart => true } do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %><br>
@@ -13,12 +13,13 @@
   <input type="hidden" name="employee[team_ids][]" value="">
 
   <%= f.fields_for :profile do |p| %>
+    <%= p.file_field :avatar, placeholder: "upload photo"%>
     <%= p.text_field :height, placeholder: "Enter height"%><br>
     <%= p.text_field :fav_food, placeholder: "Enter Favorite Food" %><br>
     <%= p.text_field :fav_day, placeholder: "Enter Favorite Weekday" %><br>
     <%= p.date_select :birthday%><%= p.label :birthday %><br>
     <%= p.text_field :salary, placeholder: "Enter Salary" %><br>
-    <%= p.text_field :photo_url, placeholder: "Enter your avatar url" %><br>
+    <%#= p.text_field :photo_url, placeholder: "Enter your avatar url" %><br>
   <% end %>
   <br>
   <%= f.submit %>
