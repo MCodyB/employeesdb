@@ -1,0 +1,12 @@
+<%= form_for @employee do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :supervisor_id %>
+<%= f.collection_select :supervisor_id, Employee.bosses, :id, :name %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<% end %>

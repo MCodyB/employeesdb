@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20130516144028) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "height"
-    t.integer  "age"
     t.string   "fav_food"
     t.string   "fav_day"
     t.date     "birthday"
