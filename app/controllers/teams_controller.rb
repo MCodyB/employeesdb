@@ -1,4 +1,4 @@
-Teamclass TeamsController < ApplicationController
+class TeamsController < ApplicationController
   def index
     if params[:team_id]
       @teams = Team.find_by_team_id(params[:team_id])
